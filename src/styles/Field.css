@@ -1,0 +1,18 @@
+.bio.view>span:nth-child(1){
+    grid-area: name;
+    font-size: 7vh; font-weight: 700;
+}
+.bio.view>span:nth-child(2){
+    box-sizing: border-box;
+    grid-area: email; width: 10vw;
+    text-align: end;
+}
+.bio.view>span:nth-child(3){
+    box-sizing: border-box;
+    grid-area: phone; width: 10vw;
+    text-align: start;
+}   
+.field{
+    display: grid; grid-template-columns: 2fr 4fr; width: 60%; height: 3vh;
+    align-items: center; column-gap: 30px;
+}

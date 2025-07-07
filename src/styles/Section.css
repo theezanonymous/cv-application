@@ -1,0 +1,26 @@
+h1{
+    border-bottom: solid black 1px;
+
+}
+
+.bio.edit{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    width: 50%; row-gap: 3vh;
+}
+.bio.view{
+    display: grid;
+    grid-template-areas: "name name" "email phone" "extra extra"; 
+    column-gap: 2vw;
+    margin: auto; text-align: center; 
+    justify-content: space-around; align-items: center;
+}
+li>*{
+    margin-bottom: 1vh;
+}
+.skillsCertifs div{
+    margin-bottom: 2vh;
+}
+.skillsCertifs input{
+    width: 150%;
+}

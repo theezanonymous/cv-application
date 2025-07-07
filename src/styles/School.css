@@ -1,0 +1,11 @@
+.education>*{
+    display: grid;
+    row-gap: 2vh; 
+
+}
+.education span:nth-child(1){
+    font-weight: 700;
+}
+.education span:nth-child(4), .education span:nth-child(5), .education span:nth-child(6){
+   float: right; margin: 0 .5vw 0 .5vw;
+}
