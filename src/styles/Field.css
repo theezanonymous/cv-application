@@ -2,14 +2,17 @@
     grid-area: name;
     font-size: 7vh; font-weight: 700;
 }
-.bio.view>span:nth-child(2){
+.bio.view>span:nth-child(2),.bio.view>span:nth-child(3) {
     box-sizing: border-box;
     grid-area: email; width: 10vw;
+    font-size: 3vh; font-weight: 400;
+}
+.bio.view>span:nth-child(2){
     text-align: end;
+    grid-area: email;
 }
 .bio.view>span:nth-child(3){
-    box-sizing: border-box;
-    grid-area: phone; width: 10vw;
+    grid-area: phone; 
     text-align: start;
 }   
 .field{

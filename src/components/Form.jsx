@@ -4,6 +4,9 @@ import Section from "./Section.jsx";
 import Field from "./Field.jsx";
 import School from "./School.jsx";
 import WorkPlace from "./WorkPlace.jsx";
+import url from '../assets/pencil.svg'
+import trash from '../assets/trash.svg'
+import plus from '../assets/plus.svg'
 export default function Form() {
   const [editMode, setEditMode] = useState(true);
   const [formData, setFormData] = useState({
@@ -16,6 +19,15 @@ export default function Form() {
     certifications: "",
   });
   return (
+    <div className = {editMode?"editBody":"viewBody"}>
+    <button
+        className={editMode?"edit":"submit"}
+        onClick={() => {
+          setEditMode(!editMode);
+        }}
+      >
+        <img src={url} alt="Edit" />
+      </button>
     <div className = "form">
       <Section sectionName="bio" name="Bio" editMode={editMode}>
         <Field
@@ -69,7 +81,7 @@ export default function Form() {
               >
                 <button
                   className="delete"
-                  style={{ display: editMode ? "block" : "none" }}
+                  style={{ display: editMode ? "flex" : "none" }}
                   onClick={() => {
                     formData.education = formData.education.filter(
                       (curr) => curr.id != school.id
@@ -77,6 +89,7 @@ export default function Form() {
                     setFormData({ ...formData });
                   }}
                 >
+                    <img src={trash} alt="" />
                   Delete
                 </button>
               </School>
@@ -85,7 +98,7 @@ export default function Form() {
         })}
         <button
           className="add"
-          style={{ display: editMode ? "block" : "none" }}
+          style={{ display: editMode ? "flex" : "none" }}
           onClick={() => {
             formData.education.push({
               name: "",
@@ -97,6 +110,7 @@ export default function Form() {
             setFormData({ ...formData });
           }}
         >
+          <img src={plus} alt="" />
           Add School
         </button>
       </Section>
@@ -123,7 +137,7 @@ export default function Form() {
               >
                 <button
                   className="delete"
-                  style={{ display: editMode ? "block" : "none" }}
+                  style={{ display: editMode ? "flex" : "none" }}
                   onClick={() => {
                     formData.experience = formData.experience.filter(
                       (curr) => curr.id != workplace.id
@@ -131,6 +145,7 @@ export default function Form() {
                     setFormData({ ...formData });
                   }}
                 >
+                  <img src={trash} alt="" />
                   Delete
                 </button>
               </WorkPlace>
@@ -139,7 +154,7 @@ export default function Form() {
         })}
         <button
           className="add"
-          style={{ display: editMode ? "block" : "none" }}
+          style={{ display: editMode ? "flex" : "none" }}
           onClick={() => {
             formData.experience.push({
               name: "",
@@ -152,6 +167,7 @@ export default function Form() {
             setFormData({ ...formData });
           }}
         >
+            <img src={plus} alt="" />
           Add Experience
         </button>
       </Section>
@@ -176,26 +192,8 @@ export default function Form() {
           }}
         ></Field>
       </Section>
-      <button
-        className="edit"
-        name="Edit"
-        style={{ display: editMode ? "none" : "block" }}
-        onClick={() => {
-          setEditMode(true);
-        }}
-      >
-        Edit
-      </button>
-      <button
-        className="submit"
-        name="Submit"
-        style={{ display: editMode ? "block" : "none" }}
-        onClick={() => {
-          setEditMode(false);
-        }}
-      >
-        Submit
-      </button>
+      
+
     </div>
-  );
+  </div>);
 }

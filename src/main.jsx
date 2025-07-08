@@ -6,7 +6,9 @@ import './styles/index.css'
 import Form from './components/Form.jsx'
 
 createRoot(document.getElementById('root')).render(
+  
   <StrictMode>
+
     <Form>
     </Form>
   </StrictMode>,

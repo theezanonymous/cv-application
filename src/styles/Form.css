@@ -1,9 +1,54 @@
+
+:root {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue); /* Define the gradient */
+    background-size: 200% auto; /* Make the gradient wider than the element */
+    animation: slide-gradient 5s 2s linear alternate infinite; /* Apply the animation */
+  }
+  
+  @keyframes slide-gradient {
+    0% { background-position: 0% center; } /* Start at the left */
+    100% { background-position: 100% center; } /* End at the right */
+  }
+@keyframes colorSwitch{
+    from{
+        background-color: red;
+    }
+    25%{
+        background-color: orange;
+    }
+    50%{
+        background-color: green;
+    }
+    75%{
+        background-color: blue;
+    }
+    to{
+        background-color: purple;
+    }
+}
+.header{
+    background-color: gray;
+    height: 10vh; margin:none;
+}
 body{
-    width: 85%; margin: auto;
-    padding-top: 5vh; padding-bottom: 10vh;
+
+    background-color: white;
+    width: 75%; margin: auto;
+    margin-top: 5vh;
+
+    border: black solid 1px; border-radius: 10px;
+    padding: 5vh 3vw 8vh 3vw; 
+    height: 100%;
+
+}
+.viewBody{
+    font-family: 'Times New Roman', Times, serif;
+}
+.editBody{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 @media(width<=600px){
-    body{
+    .body{
         width: 100%; 
     }
     li{
@@ -15,16 +60,63 @@ body{
 
 
 }
-.add{
-    width: 50%; height: 30px;
+
+button.submit, button.edit{
+    width: 65px; height: 65px;
+    background-color: none;
+    border:none; box-shadow: black 2px 2px 2px;
+    border-radius:40px;
+    position: fixed; left: 80%; 
+    transition:0.5s ease;
+    
+}
+button.edit{ 
+    filter:invert(1);
+    transform: scale(1.2) rotate(360deg);
+}
+
+input{
+    border-radius: 5px; border: solid black 1px;
+    transition: 0.3s ease-in-out;
+    padding-left: 10px;
+}
+
+input:hover{
+    background-color: lightgray;
+}
+input:focus{
+    transform: scale(1.05); color: black;
+    /* transform-origin: left; */
+    transform: 0.3 ease-out;
+    font-weight: 700;
+}
+.delete{
+    width: 20%; margin-top: 2vh;
+    color: black;
+    transition: 0.2s ease-in-out;
+}
+.delete:hover{
+    background-color: red;
+    color: white;
+}
+.add, .delete{
+    width: 20%; display: flex; align-items: center;
+    color: black;
+    transition: all 0.3s ease-in-out;
+    box-shadow: gray 2px 2px 1px;
 
 }
-.submit, .edit{
-    width: 50%;
-    margin-top: 10vh;
-    margin: auto;
+.delete:hover{
+    background-color: red;
 }
-
+.add:hover{
+    scale: 1.1;
+    background-color: lightblue;
+   color: white; 
+}
+.add:hover>img, .delete:hover>img{
+    filter: invert(1);
+}
 h1{
     font-size: 5vh;
 }
@@ -34,3 +126,9 @@ h1{
 /* ul{
     margin-bottom: -15vh;
 } */
+button{
+    border-radius: 10px;
+}
+.add img, .delete img{
+    width: 25px; height: 25px; 
+}
